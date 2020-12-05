@@ -1,0 +1,32 @@
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Place</mat-label>
+    <mat-select [(value)]="hotelPlace">
+      <mat-option value="Chennai">Chennai</mat-option>
+      <mat-option value="Mumbai">Mumbai</mat-option>
+      <mat-option value="Kolkatha">Kolkatha</mat-option>
+      <mat-option value="Bengaluru">Bengaluru</mat-option>
+
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Room Required</mat-label>
+    <mat-select [(value)]="roomsBooked">
+      <mat-option value="1">1</mat-option>
+      <mat-option value="2">2</mat-option>
+      <mat-option value="3">3</mat-option>
+      <mat-option value="4">4</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input (dateChange)="addEvent( $event)" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+<br>
+<button mat-raised-button color="primary" (click)="onButtonClick()">Search Hotels</button>
+
+</div>

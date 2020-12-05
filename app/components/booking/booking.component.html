@@ -1,0 +1,57 @@
+<mat-card>
+  Hotel Name : {{this.hotelToBeBooked.hotelName}}
+  <br>
+  <br>
+  Hotel Category : {{this.hotelToBeBooked.hotelCategory}}
+  <br>
+  <br>
+  Hotel Place : {{this.hotelToBeBooked.hotelPlace}}
+  <br>
+  <br>
+  Hotel Address : {{this.hotelToBeBooked.hotelAddress}}
+  <br>
+  <br>
+  Hotel Price : {{this.hotelToBeBooked.hotelPrice}}
+  <br>
+  <br>
+  Hotel Type : {{this.hotelToBeBooked.hotelType}}
+  <br>
+  <br>
+  Hotel Contact : {{this.hotelToBeBooked.hotelContact}}
+  <br>
+  <br>
+  Hotel Rooms : {{this.hotelToBeBooked.hotelRooms}}
+  <br>
+  <br>
+  Hotel Rating : {{this.hotelToBeBooked.hotelRating}}
+  <br>
+  <br>
+  Hotel Amenities : {{this.hotelToBeBooked.hotelAmenities}}
+  <br>
+  <br>
+  Hotel Policies :{{this.hotelToBeBooked.hotelPolicies}}
+  <br>
+  <br>
+
+
+  <mat-form-field >
+    <mat-label>Enter Your Name</mat-label>
+    <input [(ngModel)]="customerName" matInput placeholder="Ex. Ashok" >
+  </mat-form-field>
+
+  <mat-form-field >
+    <mat-label>Enter your email</mat-label>
+    <input [(ngModel)]="customerEmail" matInput placeholder="pat@example.com" [formControl]="email" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field >
+    <mat-label>Telephone</mat-label>
+    <span matPrefix>+91 &nbsp;</span>
+    <input [(ngModel)]="customerContact" type="tel" matInput placeholder="9876543210">
+  </mat-form-field>
+
+
+  <button mat-raised-button color="primary" (click)= "onBookHotel()">Book Hotel</button>
+
+</mat-card>

@@ -1,0 +1,39 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <ng-container matColumnDef="hotelName">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.hotelName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="hotelCategory">
+    <th mat-header-cell *matHeaderCellDef> Category </th>
+    <td mat-cell *matCellDef="let element"> {{element.hotelCategory}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="hotelType">
+    <th mat-header-cell *matHeaderCellDef> Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.hotelType}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="hotelRating">
+    <th mat-header-cell *matHeaderCellDef> Ratings </th>
+    <td mat-cell *matCellDef="let element"> {{element.hotelRating}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="hotelAddress">
+    <th mat-header-cell *matHeaderCellDef> Address </th>
+    <td mat-cell *matCellDef="let element"> {{element.hotelAddress}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="hotelPrice">
+    <th mat-header-cell *matHeaderCellDef> Price </th>
+    <td mat-cell *matCellDef="let element"> {{element.hotelPrice}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click) = "onHotelClick(row)"></tr>
+</table>
+
